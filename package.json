@@ -2,7 +2,7 @@
   "name": "compare-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Rishie96.github.io/compare-app",
+  "homepage": "https://Rishie96.github.io/compare-app-react",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
