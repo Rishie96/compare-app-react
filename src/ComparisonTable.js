@@ -5,7 +5,7 @@ export default class ComparisonTable extends Component {
     renderTable = () => {
         let fruits = this.props.fruits;
 
-        if(fruits.length <= 1) return;
+        if(fruits.length === 0) return;
         
         return (
             <table cellSpacing="0" >
