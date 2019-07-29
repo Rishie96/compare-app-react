@@ -30,7 +30,7 @@ class App extends React.Component {
 
   onRemoveHandler = (item) => {
     let items = this.state.compare;
-    if(items.length === 2) {
+    if(items.length === 0) {
       this.setState({compare: []});
       return;
     }

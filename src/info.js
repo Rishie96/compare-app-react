@@ -15,7 +15,7 @@ export default function() {
         {
             name: 'Guava',
             price: '12',
-            colors: ['#4caf50'],
+            colors: ['#4caf50', '#e84393'],
             condition: 'Fresh',
             description: 'Pink from inside!',
             image: Guava
@@ -31,7 +31,7 @@ export default function() {
         {
             name: 'Strawberry',
             price: '240',
-            colors: ['#f44336', '#e91e63 '],
+            colors: ['#f44336', '#e91e63'],
             condition: 'Frozen',
             description: 'Just Strawberry.',
             image: Strawberry
