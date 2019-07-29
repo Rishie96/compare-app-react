@@ -1,26 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
+import Fruits from './Fruits';
+import ComparisonTable from './ComparisonTable';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      compare: []
+    }
+  }
+
+  onClickHandler = (item) => {
+    let items = this.state.compare;
+    items.push(item);
+
+    //REMOVE IF DUPLCATE =>
+    for(let i=0; i<items.length; i++) {
+      for(let j=i+1; j<items.length; j++) {
+        if(items[i].name === items[j].name)
+          items.splice(j, 1);
+      }
+    }
+    // <=
+
+    this.setState({compare: items});
+  }
+
+  onRemoveHandler = (item) => {
+    let items = this.state.compare;
+    if(items.length === 2) {
+      this.setState({compare: []});
+      return;
+    }
+    for(let i=0; i<items.length; i++) {
+      if(items[i].name === item.name) {
+        items.splice(i, 1);
+        break;
+      }        
+    }    
+    this.setState({compare: items});
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="header">Compare Products</div>
+        <Fruits onClick={this.onClickHandler} />
+        <ComparisonTable fruits={this.state.compare} onRemove={this.onRemoveHandler} />
+      </div>
+    );
+  }
 }
 
 export default App;
