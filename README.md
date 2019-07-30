@@ -1,4 +1,4 @@
-DEMO: https://rishie96.github.io/compare-app-react/
+Live Demo: https://rishie96.github.io/compare-app-react/
 
 React JS application for comparing items.
 
